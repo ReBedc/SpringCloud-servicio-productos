@@ -33,10 +33,12 @@ public class ProductoController {
 	public Producto detalle(@PathVariable Long id) throws Exception {
 		Producto producto = productoService.findById(id);
 		producto.setPort(port);
-		boolean ok = false; // simulamos error en el servicio
-		if (ok == false) {
-			throw new Exception("No se pudo cargar el producto");
-		}
+		/*try {
+			Thread.sleep(2000L);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
+		
 		return producto;
 	}
 	
